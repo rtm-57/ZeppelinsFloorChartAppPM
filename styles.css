@@ -1,0 +1,369 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#canvas-container {
+    position: relative;
+    width: 1600px;
+    height: 800px;
+    border: 1px solid #000;
+    display:none;
+}
+
+#floorCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#controls {
+    position: relative; /* Enable absolute positioning within this container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+#notes {
+    position: absolute;
+    top: 450px; /* Adjust vertical position */
+    left: 700px; /* Adjust horizontal position */
+    width: 380px; /* Small width */
+    height: 280px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#res1 {
+    position: absolute;
+    top: 520px; /* Adjust vertical position */
+    left: 1100px; /* Adjust horizontal position */
+    width: 100px; /* Small width */
+    height: 100px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#res2 {
+    position: absolute;
+    top: 720px; /* Adjust vertical position */
+    left: 1250px; /* Adjust horizontal position */
+    width: 200px; /* Small width */
+    height: 60px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#res3 {
+    position: absolute;
+    top: 60px; /* Adjust vertical position */
+    left: 310px; /* Adjust horizontal position */
+    width: 100px; /* Small width */
+    height: 340px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#res4 {
+    position: absolute;
+    top: 25px; /* Adjust vertical position */
+    left: 1510px; /* Adjust horizontal position */
+    width: 140px; /* Small width */
+    height: 40px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#svr1 {
+    position: absolute;
+    top: 80px; /* Adjust vertical position */
+    left: 1510px; /* Adjust horizontal position */
+    width: 150px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#svr2 {
+    position: absolute;
+    top: 180px; /* Adjust vertical position */
+    left: 730px; /* Adjust horizontal position */
+    width: 150px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+#svr3 {
+    position: absolute;
+    top: 670px; /* Adjust vertical position */
+    left: 1510px; /* Adjust horizontal position */
+    width: 150px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+#svr4 {
+    position: absolute;
+    top: 290px; /* Adjust vertical position */
+    left: 1510px; /* Adjust horizontal position */
+    width: 150px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+#svr5 {
+    position: absolute;
+    top: 280px; /* Adjust vertical position */
+    left: 920px; /* Adjust horizontal position */
+    width: 100px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#svr6 {
+    position: absolute;
+    top: 420px; /* Adjust vertical position */
+    left: 1510px; /* Adjust horizontal position */
+    width: 100px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+#svr7 {
+    position: absolute;
+    top: 480px; /* Adjust vertical position */
+    left: 450px; /* Adjust horizontal position */
+    width: 150px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+#svr8 {
+    position: absolute;
+    top: 110px; /* Adjust vertical position */
+    left: 560px; /* Adjust horizontal position */
+    width: 100px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+#svr9 {
+    position: absolute;
+    top: 280px; /* Adjust vertical position */
+    left: 570px; /* Adjust horizontal position */
+    width: 95px; /* Small width */
+    height: 25px; /* Small height */
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red; /* Text color changed to red */
+    background-color: white; /* Background color changed to yellow */
+    padding: 5px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+.small-text-box {
+    position: absolute;
+    top: 690px; /* Adjust position */
+    left: 460px; /* Adjust position */
+    width: 180px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.station-button,
+.vert-button,
+.circular-button,
+.diamond-button {
+    position: absolute;
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Circular Buttons */
+.circular-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* Diamond Button Styling */
+.diamond-button {
+    width: 47px;
+    height: 47px;
+    background: lightgray;
+    transform: rotate(45deg);
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+    transition: background-color 0.3s ease;
+}
+
+/* Rotate the text back to horizontal */
+.diamond-button span {
+    transform: rotate(-45deg); /* Counter-rotate the text */
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.reset-button {
+    position: absolute; /* Allows positioning via left and top */
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.reset-button:hover {
+    background-color: #ff1a1a;
+}
+
+.first-cut-button {
+    position: absolute; /* Allows precise placement using left and top */
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.first-cut-button:hover {
+    background-color: #007acc;
+}
+
+.second-cut-button {
+    position: absolute; /* Allows precise placement using left and top */
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.second-cut-button:hover {
+    background-color: #007acc;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
