@@ -697,30 +697,10 @@ function drawCustomLines(cut) {
         drawLines(2); // Draw lines for the second cut
     }
 }
-/*
-// Application initialization
-function initialize(serverCount, initialLabelPositions) {
-    labelPositions = initialLabelPositions; // Set the global label positions
-    drawFloorLayout(); // Draw the base layout
-    createButtons(); // Create interactive buttons
-    drawLines(serverCount); // Draw server-specific lines
-    positionResetButton(460, 650); // Place Reset button
-    positionFirstCutButton(460, 550); // Place First Cut button
-    positionSecondCutButton(460, 600); // Place First Cut button
-}
-
-
-
-window.onload = () => {
-    createButtons(); // Initializes the buttons
-    showModal();     // Display the server count modal when the page loads
-};
-*/
-// Function to save the app state to localStorage
-// Save the app state, including button timers
 
 // Function to save the app state to localStorage
 function saveState() {
+    const shift = "PM"; // Change this to "PM" for the PM shift repository
     const state = {
         notes: document.getElementById('notes').value,
         timers: Object.entries(buttonTimers).reduce((acc, [id, timerData]) => {
@@ -736,13 +716,14 @@ function saveState() {
         serverNames: [...document.querySelectorAll('textarea[id^="svr"]')].map(el => el.value),
         reservations: [...document.querySelectorAll('textarea[id^="res"]')].map(el => el.value),
     };
-    localStorage.setItem('appState', JSON.stringify(state));
+    localStorage.setItem(`appState-${shift}`, JSON.stringify(state));
     console.log('State saved.');
 }
 
 // Function to load the app state from localStorage
 function loadState() {
-    const savedState = localStorage.getItem('appState');
+    const shift = "PM"; // Change this to "PM" for the PM shift repository
+    const savedState = localStorage.getItem(`appState-${shift}`);
     if (savedState) {
         const state = JSON.parse(savedState);
 
@@ -794,7 +775,8 @@ function initializeButtonTimer(btn, id, startTime, active) {
 
 // Function to clear the saved state
 function resetState() {
-    localStorage.removeItem('appState');
+    const shift = "PM"; // Change this to "PM" for the PM shift repository
+    localStorage.removeItem(`appState-${shift}`);
     console.log('State cleared.');
     resetProgram(); // Call your existing reset logic
 }
